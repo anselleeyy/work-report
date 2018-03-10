@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ansel.dao.WenTiDao">
+
+	<resultMap type="com.ansel.entity.WenTi" id="wtmap">
+		<id column="wt_id" property="wt_id" />
+		<result column="wt_cdtask" property="wt_cdtask" />
+		<result column="wt_zywt" property="wt_zywt" />
+		<result column="wt_dcjjy" property="wt_dcjjy" />
+		<result column="hbId" property="hbId" />
+	</resultMap>
+	
+	<insert id="insertWenTi" parameterType="com.ansel.entity.WenTi">
+		insert into wenti(wt_cdtask, wt_zywt, wt_dcjjy, hbId) 
+		values(#{wt_cdtask}, #{wt_zywt}, #{wt_dcjjy}, #{hbId})
+	</insert>
+	
+	<select id="findByhbId" parameterType="Integer" resultMap="wtmap">
+		select * from wenti where hbId = #{hbId}
+	</select>
+	
+	<delete id="deleteWenTiByhbId" parameterType="Integer">
+		delete from wenti where hbId = #{hbId}
+	</delete>
+	
+</mapper>

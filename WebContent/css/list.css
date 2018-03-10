@@ -1,0 +1,114 @@
+@charset "UTF-8";
+body{
+	margin: 0px;
+	padding: 0px;
+}
+a{
+	text-decoration: none;
+	color: black;
+}
+#bott1{
+	width: 1180px;
+	height: 1000px;
+}
+#bott1_1{
+	width: 1180px;
+	height: 700px;
+}
+#bott2{
+	width: 115px;
+	height: 31px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#bott2_2{
+	width: 157px;
+	height: 31px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#bott3{
+	margin-left: 45px;
+	margin-right: 40px;
+	margin-top: 20px;
+}
+#bott4{
+	margin-left: 45px;
+	margin-right: 50px;
+	margin-top: 10px;
+}
+#bott5{
+	margin-top: 20px;
+}
+#bott6{
+	width: 300px;
+	height: 60px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 15px;
+}
+#bott7{
+	width: 1100px;
+	height: 500px;
+	padding-top: 10px;
+}
+#bott8{
+	width: 300px;
+	height: 60px;
+	margin-left: 490px;
+}
+#bott9{
+	width: 250px;
+	height: 60px;
+	margin-left: 470px;
+}
+#bott10{
+	width: 320px;
+	height: 60px;
+	margin-left: 400px;
+}
+
+#td{
+	border-top: thin dashed gray;
+	border-left: thin dashed gray;
+	height: 28px;
+}
+#td_table{
+	margin: 10px;
+}
+.a{
+	width: 85px;
+	border-radius:5px;
+	color:#fff;
+	display: inline-block;
+	height:35px;
+	text-align: center;
+	font:normal 16px/30px "Microsoft Yahei";
+	margin-top: -6px;
+	margin-left: 50px;
+	background:#ff2832;
+	border: 0px;
+}
+.select{
+	width: 900px;
+	height: 28px;
+	font-size: 15px;
+}
+.inpu1{
+	width: 60px;
+	border-radius:5px;
+	color:#fff;
+	height:25px;
+	text-align: center;
+	font:normal 15px/25px "Microsoft Yahei";
+	background:#ff2832;
+	border: 0px;
+}
+.inpu1:hover{
+	background:#f01923;
+	text-decoration:none;
+}
+
+
+
+

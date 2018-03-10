@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ansel.dao.NextTaskDao">
+
+	<resultMap type="com.ansel.entity.NextTask" id="nextmap">
+		<id column="next_id" property="next_id" />
+		<result column="next_cdtask" property="next_cdtask" />
+		<result column="next_rq" property="next_rq" />
+		<result column="next_zr" property="next_zr" />
+		<result column="next_xtbm" property="next_xtbm" />
+		<result column="next_bz" property="next_bz" />
+		<result column="hbId" property="hbId" />
+	</resultMap>
+	
+	<insert id="insertNextTask" parameterType="com.ansel.entity.NextTask">
+		insert into nexttask(next_cdtask, next_rq, next_zr, next_xtbm, next_bz, hbId) 
+		values(#{next_cdtask}, #{next_rq}, #{next_zr}, #{next_xtbm}, #{next_bz}, #{hbId})
+	</insert>
+	
+	<select id="findByhbId" parameterType="Integer" resultMap="nextmap">
+		select * from nexttask where hbId = #{hbId}
+	</select>
+	
+	<delete id="deleteNextTaskByhbId" parameterType="Integer">
+		delete from nexttask where hbId = #{hbId}
+	</delete>
+	
+</mapper>

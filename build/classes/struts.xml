@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+
+	<package name="day01" namespace="/" extends="struts-default">
+	
+		<!-- 登录 -->
+		<action name="login" class="com.ansel.action.LoginAction" method="login">
+			<result name="success">main/main.jsp</result>
+			<result name="error">index.jsp</result>
+		</action>
+		
+		<!-- 主页面中查询员工通讯录 -->
+		<action name="listu" class="com.ansel.action.LoginAction" method="findygtxl">
+			<result name="success">main/mainRight.jsp</result>
+			<result name="error">index.jsp</result>
+		</action>
+		
+		<!-- 主页面中查询上周期汇报未提交员工 -->
+		<action name="listwf" class="com.ansel.action.LoginAction" method="listwf">
+			<result name="success">main/mainRight.jsp</result>
+			<result name="error">index.jsp</result>
+		</action>
+		
+		<!-- 新建工作汇报 -->
+		<action name="newhb" class="com.ansel.action.HuiBaoAction" method="newHb">
+			<result name="zb">zhoubao/xinjian.jsp</result>
+			<result name="yb">yuebao/xinjian.jsp</result>
+			<result name="nb">nianbao/xinjian.jsp</result>
+			<!-- 这个链接是不跳转的，但为了和newHB中对应，所以保留。 -->
+			<result name="success">zhoubao/xinjian.jsp</result>
+		</action>
+		
+		<!-- 查看待发汇报 -->
+		<action name="sendhb" class="com.ansel.action.HuiBaoAction" method="sendHb">
+			<result name="zb">zhoubao/daifalist.jsp</result>
+			<result name="yb">yuebao/daifalist.jsp</result>
+			<result name="nb">nianbao/daifalist.jsp</result>
+			
+			<result name="success">zhoubao/daifalist.jsp</result>
+		</action>
+		
+		<!-- 编辑待发汇报 -->
+		<action name="edithb" class="com.ansel.action.HuiBaoAction" method="editHb">
+			<result name="zb">zhoubao/daifa.jsp</result>
+			<result name="yb">yuebao/daifa.jsp</result>
+			<result name="nb">nianbao/daifa.jsp</result>
+			
+			<result name="success">zhoubao/daifa.jsp</result>
+		</action>
+		
+		<!-- 查看已发汇报 -->
+		<action name="oldhb" class="com.ansel.action.HuiBaoAction" method="oldHb">
+			<result name="zb">zhoubao/yifalist.jsp</result>
+			<result name="yb">yuebao/yifalist.jsp</result>
+			<result name="nb">nianbao/yifalist.jsp</result>
+			
+			<result name="success">zhoubao/yifalist.jsp</result>
+		</action>
+		
+		<!-- 发送汇报 -->
+		<action name="sashb" class="com.ansel.action.HuiBaoAction" method="sasHb">
+			<result name="zb">zhoubao/xinjian.jsp</result>
+			<result name="yb">yuebao/xinjian.jsp</result>
+			<result name="nb">nianbao/xinjian.jsp</result>
+			
+			<result name="success">zhoubao/xinjian.jsp</result>
+		</action>
+		
+		<!-- 删除待发汇报 -->
+		<action name="deletehb" class="com.ansel.action.HuiBaoAction" method="deleteHb">
+			<result name="success" type="redirectAction">
+				<param name="actionName">sendhb</param>
+				<param name="hb.hbType">${hb.hbType}</param>
+			</result>
+		</action>
+		
+		<!-- 删除已发汇报 -->
+		<action name="deleteoldhb" class="com.ansel.action.HuiBaoAction" method="deleteHb">
+			<result name="success" type="redirectAction">
+				<param name="actionName">oldhb</param>
+				<param name="hb.hbType">${hb.hbType}</param>
+			</result>
+		</action>
+		
+		<!-- 进入管理员的收件箱系统 -->
+		<action name="normalget" class="com.ansel.action.HuiBaoAction" method="normalGet">
+			<result name="success">shoujianxianglist.jsp</result>
+		</action>
+		
+		<!-- 进入超级管理员的收件箱系统 -->
+		<action name="superget" class="com.ansel.action.HuiBaoAction" method="superGet">
+			<result name="success">managersjxlist.jsp</result>
+		</action>
+		
+		<!-- 在待发中发送汇报 -->
+		<action name="sendsavedhb" class="com.ansel.action.HuiBaoAction" method="updateSaved">
+			<result name="zb">zhoubao/xinjian.jsp</result>
+			<result name="yb">yuebao/xinjian.jsp</result>
+			<result name="nb">nianbao/xinjian.jsp</result>
+			
+			<result name="success">zhoubao/xinjian.jsp</result>
+		</action>
+		
+		
+		<!-- 待发编辑中处理发送和保存 -->
+		<action name="sasoldhb" class="com.ansel.action.HuiBaoAction" method="sasoldHb">
+			<result name="zb">zhoubao/xinjian.jsp</result>
+			<result name="yb">yuebao/xinjian.jsp</result>
+			<result name="nb">nianbao/xinjian.jsp</result>
+			
+			<result name="success">zhoubao/xinjian.jsp</result>
+		</action>
+		
+		<!-- 已发中查看批阅过的汇报 -->
+		<action name="reviewhb" class="com.ansel.action.HuiBaoAction" method="reviewHb">
+			<result name="zb">zhoubao/yifa.jsp</result>
+			<result name="yb">yuebao/yifa.jsp</result>
+			<result name="nb">nianbao/yifa.jsp</result>
+			
+			<result name="success">zhoubao/yifa.jsp</result>
+		</action>
+		
+		<!-- 批复汇报 -->
+		<action name="pfhb" class="com.ansel.action.HuiBaoAction" method="pfHb">
+			<result name="zb">zhoubao/showzhoubao.jsp</result>
+			<result name="yb">yuebao/showyuebao.jsp</result>
+			<result name="nb">nianbao/shownianbao.jsp</result>
+			
+			<result name="success">zhoubao/showzhoubao.jsp</result>
+		</action>
+		
+		<!-- 超级管理员的批复 -->
+		<action name="uploadsuperpf" class="com.ansel.action.HuiBaoAction" method="uploadPf">
+			<result name="*" type="redirectAction">
+				<param name="actionName">superget</param>
+			</result>
+		</action>
+		
+		<!-- 管理员的批复 -->
+		<action name="uploadpf" class="com.ansel.action.HuiBaoAction" method="uploadPf">
+			<result name="zb" type="redirectAction">
+				<param name="actionName">normalget?hb.ty=0</param>
+			</result>
+			<result name="yb" type="redirectAction">
+				<param name="actionName">normalget?hb.ty=1</param>
+			</result>
+			<result name="nb" type="redirectAction">
+				<param name="actionName">normalget?hb.ty=2</param>
+			</result>
+			<result name="success" type="redirectAction">
+				<param name="actionName">normalget?hb.ty=0</param>
+			</result>
+		</action>
+		
+		<!-- 修改信息 -->
+		<action name="updateself" class="com.ansel.action.OperateAction" method="updateSelf">
+			<result name="success">updateself.jsp</result>
+		</action>
+		
+		<!-- 更新信息 -->
+		<action name="updateinfo" class="com.ansel.action.OperateAction" method="updateInfo">
+			<result name="success">UpdateSuccess.jsp</result>
+			<result name="error">UpdateError.jsp</result>
+		</action>
+		
+		<!-- 部门管理 -->
+		<action name="managebumen" class="com.ansel.action.OperateAction" method="manageBumen">
+			<result name="success">bumenlist.jsp</result>
+		</action>
+		
+		<!-- 删除部门 -->
+		<action name="deletebumen" class="com.ansel.action.OperateAction" method="deleteBumen">
+			<result name="success">bumen/deletesuccess.jsp</result>
+		</action>
+		
+		<!-- 更新部门信息 -->
+		<action name="updatebm" class="com.ansel.action.OperateAction" method="updateBm">
+			<result name="success">bumen/updatesuccess.jsp</result>
+		</action>
+		
+		<!-- 新增部门 -->
+		<action name="addbumen" class="com.ansel.action.OperateAction" method="addBumen">
+			<result name="success">bumen/insertsuccess.jsp</result>
+		</action>
+		
+		<!-- 退出系统 -->
+		<action name="exit" class="com.ansel.action.LoginAction" method="exit">
+			<result name="success">login.jsp</result>
+		</action>
+		
+		
+		
+	</package>
+	
+</struts>

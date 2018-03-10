@@ -1,0 +1,174 @@
+@charset "UTF-8";
+body{
+	background-color: #f6f9fb;
+	margin: 0px;
+	padding: 0px;
+	font-size: 12px;
+}
+#top{
+	padding:40px 0 24px 0 ;
+	margin:0 auto;
+	width:865px;
+	height:60px;
+}
+/**忘记密码和注册的链接样式**/
+a{
+	text-decoration: none;
+	text-align:center;
+	color: #787878;
+}
+a:hover{
+	text-decoration:underline;
+}
+.wrap{
+	width:825px;
+	background-color: #fff;
+	color:#6e6e6e;
+	padding:15px 25px 15px 15px;
+	margin:15px auto;
+	position:relative;
+	border:1px solid #eef2f4;
+	box-shadow: 0px 1px 2px #eee;
+}
+.wrap .pic{
+	width:480px;
+	height:384px;
+	float:left;
+}
+.wrap .pic img{
+	width:480px;
+	height:384px;
+	background: no-repeat;
+	border:none;
+}
+.wrap:after{
+	content:'';
+	display:block;
+	clear:both;
+}
+.inp{
+	width: 325px;
+	height: 384px;
+	margin-left: 20px;
+	float:left;
+}
+.inp_a{
+	width: 325px;
+	height: 20px;
+	padding-top: 30px;
+}
+/**忘记密码页面*/
+.inp_a1{
+	width: 325px;
+	height: 220px;
+	padding-top: 60px;
+}
+.inp_b1{
+	width: 140px;
+	height: 30px;
+	margin:0 auto;
+	font:normal 25px/44px "Microsoft Yahei";
+}
+.inp_c1{
+	width: 160px;
+	height: 30px;
+	margin:0 auto;
+	font:normal 25px/44px "Microsoft Yahei";
+}
+/**用户名**/
+.inp_b{
+	width: 325px;
+	border: 1px solid black;
+	margin-top: 10px;
+}
+.inp_b:after{
+	content:'';
+	display:block;
+	clear:both;
+}
+.inp .inp_b .u{
+	width: 34px;
+	height: 36px;
+	margin-top: 4px;
+	float: left;
+	background-image: url("../image/icon_u.jpg");
+}
+.inp .inp_b .inpu{
+	width: 287px;
+	height: 45px;
+	line-height: 45px;
+	text-align: left;
+	padding: 3px 0 0 0;
+	float: left;
+	color: #787878;
+	border: 0px;
+}
+.inp .inp_c{
+	width: 325px;
+	height:20px;
+	padding-bottom:3px;
+}
+.inp .inp_c #u_p{
+	line-height: 15px;
+	color: #787878;
+}
+/**密码**/
+.inp .inp_p{
+	width: 325px;
+	border: 1px solid black;
+	margin-top: 5px;
+}
+.inp .inp_p:after{
+	content:'';
+	display:block;
+	clear:both;
+}
+.inp .inp_p .p{
+	width: 34px;
+	height: 36px;
+	margin-top: 4px;
+	float: left;
+	background-image: url("../image/icon_p.jpg");
+}
+.inp .inp_p .pswd{
+	width: 287px;
+	height: 45px;
+	line-height: 45px;
+	text-align: left;
+	padding: 1px 0 0 0;
+	float: left;
+	color: #787878;
+	border: 0px;
+}
+.inp .inp_p_c{
+	width: 325px;
+	height:20px;
+	padding-bottom:3px;
+}
+.inp .inp_p_c #p_p{
+	line-height: 15px;
+	color: #787878;
+}
+/**登录按钮**/
+.inp .btn .a{
+	width: 150px;
+	border-radius:5px;
+	color:#fff;
+	display: inline-block;
+	height:44px;
+	text-align: center;
+	font:normal 20px/44px "Microsoft Yahei";
+	margin-top: -6px;
+	margin-left: 7px;
+	background:#ff2832;
+	border: 0px;
+}
+.inp .btn .a:hover{
+	background:#f01923;
+	text-decoration:none;
+}
+/**补加注册用户右浮动**/
+.inp .r{
+	float: right;
+	margin-right: 20px;
+}

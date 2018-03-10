@@ -1,0 +1,46 @@
+@charset "UTF-8";
+a{
+	text-decoration: none;
+}
+.div1{
+	color: #787878;
+	font-size: 20px;
+	float: left;
+	margin-bottom: 10px;
+}
+.div2{
+	width: 260px;
+	height: 30px;
+	float: left;
+}
+.inpu{
+	width:180px;
+	height:30px;
+	line-height:30px;
+	text-align:left;
+	padding: 3px 0 0 0;
+	color: #787878;
+	border: 0px;
+	font-size: 15px;
+	background-color: #baf4f8;
+	margin-left: 6px;
+	margin-right: 6px;
+}
+.inpu1{
+	width: 60px;
+	border-radius:5px;
+	color:#fff;
+	height:25px;
+	text-align: center;
+	font:normal 15px/25px "Microsoft Yahei";
+	background:#ff2832;
+	border: 0px;
+}
+.inpu1:hover{
+	background:#f01923;
+	text-decoration:none;
+}
+.div3{
+	margin-top:3px;
+	float: right;
+}

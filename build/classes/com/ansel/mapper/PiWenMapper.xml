@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ansel.dao.PiWenDao">
+
+	<resultMap type="com.ansel.entity.PiWen" id="pwmap">
+		<id column="pw_id" property="pw_id" />
+		<result column="pw_content" property="pw_content" />
+		<result column="pw_name" property="pw_name" />
+		<result column="pw_bmName" property="pw_bmName" />
+		<result column="pw_rq" property="pw_rq" />
+		<result column="hbId" property="hbId" />
+	</resultMap>
+
+	<select id="findPWByhbId" resultMap="pwmap" parameterType="int">
+		select * from piwen where hbId = #{hbId}
+	</select>
+	
+	<insert id="insertNewPiWen" parameterType="com.ansel.entity.PiWen">
+		insert into piwen(pw_content, pw_name, pw_bmName, pw_rq, hbId) 
+		values(#{pw_content}, #{pw_name}, #{pw_bmName}, #{pw_rq}, #{hbId})
+	</insert>
+
+</mapper>

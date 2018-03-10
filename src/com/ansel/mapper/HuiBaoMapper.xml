@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ansel.dao.HuiBaoDao">
+
+	<resultMap type="com.ansel.entity.HuiBao" id="hbmap">
+		<id column="hbId" property="hbId" />
+		<result column="hbType" property="hbType" />
+		<result column="hbDate" property="hbDate" />
+		<result column="hbZyys" property="hbZyys" />
+		<result column="bmName" property="bmName" />
+		<result column="managerName" property="managerName" />
+		<result column="csRen" property="csRen" />
+		<result column="userId" property="userId" />
+		<result column="hbState" property="hbState" />
+	</resultMap>
+	
+	<resultMap type="com.ansel.entity.HuiBao_User" id="hbumap">
+		<id column="hbId" property="hbId" />
+		<result column="hbType" property="hbType" />
+		<result column="hbDate" property="hbDate" />
+		<result column="hbZyys" property="hbZyys" />
+		<result column="bmName" property="bmName" />
+		<result column="managerName" property="managerName" />
+		<result column="csRen" property="csRen" />
+		<result column="userId" property="userId" />
+		<result column="hbState" property="hbState" />
+		<result column="userName" property="userName" />
+	</resultMap>
+
+	<select id="findHuiBaoById" resultMap="hbmap" parameterType="Integer">
+		select * from hb where hbId = #{hbId}
+	</select>
+	
+	<select id="findHuiBaoByUserIdAndTY" resultMap="hbmap">
+		select * from hb where userId = #{userId} and hbType = #{hbType}
+	</select>
+	
+	<select id="findHuiBaoByUserIdAndST" resultMap="hbmap">
+		select * from hb where userId = #{userId} and hbState = #{hbState}
+	</select>
+	
+	<select id="findHuiBaoAndUNameByMNameAndTyAndST" resultMap="hbumap">
+		select h.*, u.userName from hb as h join user as u on h.userId = u.userId where h.managerName = #{managerName} and h.hbType = #{hbType} and h.hbState = #{hbState};
+	</select>
+	
+	<select id="findHuiBaoWithUserByhbId" resultMap="hbumap">
+		select h.*, u.userName from hb as h join user as u on h.userId = u.userId where h.hbId = #{hbId}
+	</select>
+	
+	<select id="findByUIDATYAZ" resultMap="hbmap">
+		select * from hb where userId = #{userId} and hbType = #{hbType} and hbZyys = #{hbZyys}
+	</select>
+	
+	<select id="findWFHB" resultMap="hbmap">
+		select * from hb where hbType = #{hbType} and hbZyys = #{hbZyys} and hbState = #{hbState}
+	</select>
+	
+	<select id="findHuiBaoByUserIdAndTYAndST" resultMap="hbmap">
+		select * from hb where userId = #{userId} and hbType = #{hbType} and hbState = #{hbState}
+	</select>
+	
+	<insert id="insertHuiBao" parameterType="com.ansel.entity.HuiBao">
+		insert into hb(hbType, hbDate, hbZyys, bmName, managerName, csRen, userId, hbState) 
+		values(#{hbType}, #{hbDate}, #{hbZyys}, #{bmName}, #{managerName}, #{csRen}, #{userId}, #{hbState})
+	</insert>
+	
+	<delete id="deleteHuiBaoById" parameterType="int">
+		delete from hb where hbId = #{hbId}
+	</delete>
+	
+	<delete id="deleteHuiBaoByUserId" parameterType="int">
+		delete from hb where userId = #{userId}
+	</delete>
+	
+	<update id="updateHuiBaoByIdSetST">
+		update hb set hbState = #{hbState} where hbId = #{hbId}
+	</update>
+
+</mapper>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ansel.dao.NowTaskDao">
+
+	<resultMap type="com.ansel.entity.NowTask" id="ntmap">
+		<id column="now_id" property="now_id" />
+		<result column="now_cdtask" property="now_cdtask" />
+		<result column="now_xdrq" property="now_xdrq" />
+		<result column="now_wcrq" property="now_wcrq" />
+		<result column="hbId" property="hbId" />
+	</resultMap>
+	
+	<insert id="insertNowTask" parameterType="com.ansel.entity.NowTask">
+		insert into nowtask(now_cdtask, now_xdrq, now_wcrq, hbId) 
+		values(#{now_cdtask}, #{now_xdrq}, #{now_wcrq}, #{hbId})
+	</insert>
+	
+	<select id="findByhbId" parameterType="Integer" resultMap="ntmap">
+		select * from nowtask where hbId = #{hbId}
+	</select>
+	
+	<delete id="deleteNowTaskByhbId" parameterType="Integer">
+		delete from nowtask where hbId = #{hbId}
+	</delete>
+	
+</mapper>

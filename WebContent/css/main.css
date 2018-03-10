@@ -1,0 +1,23 @@
+@charset "UTF-8";
+body{
+	margin: 0px;
+	padding: 0px;
+}
+#top{
+	width: 1439px;
+	height: 70px;
+}
+#left{
+	width: 206px;
+	height: 723px;
+}
+#right{
+	height: 723px;
+	position: absolute;
+	left: 206px;
+	top: 70px;
+}
+#right1{
+	width: 1236px;
+	height: 723px;
+}
